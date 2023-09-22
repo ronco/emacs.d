@@ -40,8 +40,11 @@
 (setq uniquify-buffer-name-style 'forward)
 (setq-default save-place t)
 (setq-default indent-tabs-mode nil)
+
+;; variables
 (setq select-enable-clipboard t
       select-enable-primary t
+      tab-width 2
       save-interprogram-paste-before-kill t
       mouse-yank-at-point t
       save-place-file (concat user-emacs-directory "places")
@@ -76,4 +79,11 @@
   (shift-text (- count)))
 
 ;; key bindings
-;; (global-set-key (kbd "s-[") ')
+
+(global-set-key (kbd "s-]") (lambda ()
+                              (interactive)
+                              (shift-right tab-width)))
+(global-set-key (kbd "s-[") (lambda ()
+                              (interactive)
+                              (shift-left tab-width)))
+
