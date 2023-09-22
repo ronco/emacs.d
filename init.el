@@ -18,12 +18,23 @@
 (straight-use-package 'diminish)
 (straight-use-package 'exec-path-from-shell)
 (straight-use-package 'ivy)
+(straight-use-package 'org)
+(straight-use-package 'php-mode)
+(straight-use-package 'lsp-mode)
 
 ;; Start packages
 (smartparens-global-mode)
 (company-mode)
 (exec-path-from-shell-initialize)
 (ivy-mode)
+
 ;; Diminish as necessary
 (diminish 'smartparens-mode)
 (diminish 'company-mode)
+(diminish 'ivy-mode)
+
+;; configure packages
+
+;; configure UI
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
