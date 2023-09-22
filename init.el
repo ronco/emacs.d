@@ -23,10 +23,13 @@
 (straight-use-package 'lsp-mode)
 
 ;; Start packages
+(require 'uniquify)
+(require 'saveplace)
 (smartparens-global-mode)
 (company-mode)
 (exec-path-from-shell-initialize)
 (ivy-mode)
+
 
 ;; Diminish as necessary
 (diminish 'smartparens-mode)
@@ -34,7 +37,19 @@
 (diminish 'ivy-mode)
 
 ;; configure packages
+(setq uniquify-buffer-name-style 'forward)
+(setq-default save-place t)
+(setq-default indent-tabs-mode nil)
+(setq select-enable-clipboard t
+      select-enable-primary t
+      save-interprogram-paste-before-kill t
+      mouse-yank-at-point t
+      save-place-file (concat user-emacs-directory "places")
+      backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                               "backups"))))
 
 ;; configure UI
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
