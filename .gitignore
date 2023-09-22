@@ -1,3 +1,8 @@
 /auto-save-list/
 *~
 /straight/
+/.cache/
+/.lsp-session-v1
+/lsp-cache/
+/org-persist/
+/transient/
