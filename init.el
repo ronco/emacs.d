@@ -21,8 +21,10 @@
 (straight-use-package 'org)
 (straight-use-package 'php-mode)
 (straight-use-package 'lsp-mode)
+(straight-use-package 'zenburn-theme)
 
 ;; Start packages
+(load-theme 'zenburn t)
 (require 'uniquify)
 (require 'saveplace)
 (smartparens-global-mode)
