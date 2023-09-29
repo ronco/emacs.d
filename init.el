@@ -22,6 +22,7 @@
 (straight-use-package 'php-mode)
 (straight-use-package 'lsp-mode)
 (straight-use-package 'zenburn-theme)
+(straight-use-package 'counsel)
 
 ;; Start packages
 (load-theme 'zenburn t)
@@ -195,3 +196,9 @@ is available. Useful if you tend to hammer your keys like I do."
                               (interactive)
                               (shift-left tab-width)))
 
+(global-set-key (kbd "C-x C-r") 'counsel-recentf)
+
+;; file modes
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
