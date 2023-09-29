@@ -53,6 +53,8 @@
       backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                "backups"))))
 
+(setq-default tab-width 2)
+
 ;; configure UI
 (if (display-graphic-p)
     (progn
