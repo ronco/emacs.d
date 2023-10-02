@@ -23,6 +23,7 @@
 (straight-use-package 'lsp-mode)
 (straight-use-package 'zenburn-theme)
 (straight-use-package 'counsel)
+(straight-use-package 'move-text)
 
 ;; Start packages
 (load-theme 'zenburn t)
@@ -32,6 +33,20 @@
 (company-mode)
 (exec-path-from-shell-initialize)
 (ivy-mode)
+
+;; move-text
+(move-text-default-bindings)
+(defun indent-region-advice (&rest ignored)
+  (let ((deactivate deactivate-mark))
+    (if (region-active-p)
+        (indent-region (region-beginning) (region-end))
+      (indent-region (line-beginning-position) (line-end-position)))
+    (setq deactivate-mark deactivate)))
+
+(advice-add 'move-text-up :after 'indent-region-advice)
+(advice-add 'move-text-down :after 'indent-region-advice)
+
+
 
 ;; copilot
 (use-package copilot
