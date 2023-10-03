@@ -24,6 +24,7 @@
 (straight-use-package 'zenburn-theme)
 (straight-use-package 'counsel)
 (straight-use-package 'move-text)
+(straight-use-package 'projectile)
 
 ;; Start packages
 (load-theme 'zenburn t)
@@ -46,7 +47,11 @@
 (advice-add 'move-text-up :after 'indent-region-advice)
 (advice-add 'move-text-down :after 'indent-region-advice)
 
-
+;; projectile
+(require 'projectile)
+(global-unset-key (kbd "s-p"))
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(projectile-mode +1)
 
 ;; copilot
 (use-package copilot
