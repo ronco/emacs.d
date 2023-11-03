@@ -232,3 +232,11 @@ cleared, make sure the overlay doesn't come back too soon."
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
+
+;; hooks
+(add-hook 'python-mode-hook
+		  (lambda ()
+  (setq indent-tabs-mode nil)
+  (setq tab-width 4)
+  (message "python-mode-hook was here - no tabs")
+))
