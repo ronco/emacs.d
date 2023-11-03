@@ -25,6 +25,7 @@
 (straight-use-package 'counsel)
 (straight-use-package 'move-text)
 (straight-use-package 'projectile)
+(straight-use-package 'ag)
 
 ;; Start packages
 (load-theme 'zenburn t)
