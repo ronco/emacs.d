@@ -133,7 +133,7 @@ tab-indent."
       ;; (company-yasnippet-or-completion)
       (indent-for-tab-command)))
 
-(define-key global-map (kbd "<tab>") #'rk/copilot-tab)
+;; (define-key global-map (kbd "<tab>") #'rk/copilot-tab)
 
 (defun rk/copilot-quit ()
   "Run `copilot-clear-overlay' or `keyboard-quit'. If copilot is
