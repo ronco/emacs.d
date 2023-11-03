@@ -69,7 +69,9 @@
                               term-mode
                               vterm-mode
                               comint-mode
+                              magit-mode
                               compilation-mode
+                              org-mode
                               debugger-mode
                               dired-mode-hook
                               compilation-mode-hook
@@ -156,8 +158,9 @@ cleared, make sure the overlay doesn't come back too soon."
 (global-copilot-mode)
 
 ;; magit
-(add-hook 'magit-mode-hook
-          (lambda () (local-set-key (kbd "<tab>") #'magit-section-toggle)))
+;; (add-hook 'magit-mode-hook
+;;           (lambda () (local-set-key (kbd "<tab>") #'magit-section-toggle)))
+
 
 
 
