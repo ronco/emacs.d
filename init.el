@@ -21,20 +21,25 @@
 (straight-use-package 'org)
 (straight-use-package 'php-mode)
 (straight-use-package 'lsp-mode)
-(straight-use-package 'zenburn-theme)
+;; (straight-use-package 'zenburn-theme)
+(straight-use-package 'haki-theme)
 (straight-use-package 'counsel)
 (straight-use-package 'move-text)
 (straight-use-package 'projectile)
 (straight-use-package 'ag)
+(straight-use-package 'git-link)
+(straight-use-package 'git-gutter)
 
 ;; Start packages
-(load-theme 'zenburn t)
+(load-theme 'haki t)
 (require 'uniquify)
 (require 'saveplace)
 (smartparens-global-mode)
 (company-mode)
 (exec-path-from-shell-initialize)
 (ivy-mode)
+(winner-mode)
+(global-git-gutter-mode)
 
 ;; move-text
 (move-text-default-bindings)
