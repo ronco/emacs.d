@@ -237,11 +237,35 @@ cleared, make sure the overlay doesn't come back too soon."
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-ts-mode))
 
-;; hooks
-(add-hook 'python-mode-hook
-		  (lambda ()
+;; spaces
+;; tabs & spaces
+(defun 4x4-spaces ()
+  "Setting to use spaces for tabs at a width of 4"
+  (interactive)
   (setq indent-tabs-mode nil)
   (setq tab-width 4)
-  (message "python-mode-hook was here - no tabs")
-))
+  (setq c-basic-offset 4))
+
+(defun 2x2-spaces ()
+  "Setting to use spaces for tabs at a width of 2"
+  (interactive)
+  (setq indent-tabs-mode nil)
+  (setq tab-width 2)
+  (setq c-basic-offset 2))
+
+(defun 4x4-tabs ()
+  "Setting to use tabs at a width of 4"
+  (interactive)
+  (setq indent-tabs-mode t)
+  (setq tab-width 4)
+  (setq c-basic-offset 4))
+
+
+
+;; hooks
+(defun my-4x4-hook ()
+  (4x4-spaces))
+(add-hook 'python-mode-hook #'my-4x4-hook)
+(add-hook 'sql-mode-hook #'my-4x4-hook)
