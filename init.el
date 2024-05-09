@@ -41,6 +41,12 @@
 (winner-mode)
 (global-git-gutter-mode)
 
+;; recent files
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(setq recentf-max-saved-items 25)
+
+
 ;; move-text
 (move-text-default-bindings)
 (defun indent-region-advice (&rest ignored)
